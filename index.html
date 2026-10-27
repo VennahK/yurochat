@@ -1,1 +1,79 @@
-index.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YuroChat | Connect & Chat</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#faf7ff;color:#251238}
+header{background:#420878;color:white;padding:20px;text-align:center}
+.logo{font-size:32px;font-weight:900;color:#f4d38b}
+.hero{padding:38px 18px;text-align:center;background:linear-gradient(135deg,#420878,#8d35ca);color:white}
+.hero h1{font-size:30px;margin:10px 0}
+.hero p{line-height:1.6}
+.btn{background:#6820aa;color:white;border:0;border-radius:9px;padding:12px 16px;font-weight:bold;cursor:pointer;text-decoration:none;display:inline-block}
+.hero .btn{background:#f1d18c;color:#391064}
+section{padding:24px 14px}
+h2{text-align:center;color:#4b117c}
+.status{text-align:center;color:#27814b;font-weight:bold}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;margin-top:20px}
+.card{background:white;border-radius:15px;overflow:hidden;box-shadow:0 4px 15px #3d15521c}
+.avatar{height:110px;display:flex;align-items:center;justify-content:center;background:linear-gradient(140deg,#e8d5fb,#f9e8d0);font-size:50px}
+.info{padding:12px}
+.info h3{font-size:16px;margin:0 0 5px}
+.info p{font-size:12px;color:#777;margin:0 0 12px}
+.actions{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
+.actions .btn{font-size:10px;padding:10px 2px;text-align:center}
+.notice{font-size:12px;color:#666;text-align:center;padding:15px}
+footer{background:#300657;color:white;text-align:center;padding:25px;font-size:13px}
+@media(min-width:650px){.grid{grid-template-columns:repeat(4,1fr);max-width:1100px;margin:20px auto}.avatar{height:160px}}
+</style>
+</head>
+<body>
+<header><div class="logo">✦ YuroChat</div><small>Connect • Discover • Chat</small></header>
+<div class="hero">
+<h1>Meet New People Around the World</h1>
+<p>Discover connections, explore conversations and find your next opportunity.</p>
+<a class="btn" href="https://mulaearn.com/register.php?ref=ItsVee">Get Started</a>
+</div>
+<section>
+<h2>Explore Our Community</h2>
+<p class="status">● Browse 24 sample profiles</p>
+<div class="grid" id="profiles"></div>
+<p class="notice">Profiles are illustrative examples, not verified live users. Chat, call and video services require registration on our partner platform. Availability and fees are determined by that platform.</p>
+</section>
+<footer>© 2026 YuroChat. All rights reserved.</footer>
+<script>
+const link="https://mulaearn.com/register.php?ref=ItsVee";
+const people=[
+["James","USA","👨🏻"],["Sophia","Canada","👩🏼"],
+["Daniel","UK","👨🏽"],["Olivia","Australia","👩🏻"],
+["Ethan","USA","👨🏼"],["Isabella","Italy","👩🏽"],
+["Noah","Germany","👨🏻"],["Amelia","France","👩🏼"],
+["Liam","Ireland","👨🏾"],["Mia","Spain","👩🏻"],
+["Lucas","Brazil","👨🏽"],["Charlotte","Canada","👩🏾"],
+["Oliver","UK","👨🏼"],["Ava","USA","👩🏼"],
+["Henry","Sweden","👨🏻"],["Emily","Australia","👩🏽"],
+["Alexander","Norway","👨🏽"],["Grace","New Zealand","👩🏻"],
+["William","USA","👨🏾"],["Chloe","France","👩🏼"],
+["Benjamin","Netherlands","👨🏻"],["Ella","Germany","👩🏽"],
+["Jack","UK","👨🏼"],["Lily","Canada","👩🏻"]
+];
+document.getElementById("profiles").innerHTML=people.map(p=>`
+<div class="card">
+<div class="avatar">${p[2]}</div>
+<div class="info">
+<h3>${p[0]}</h3>
+<p>📍 ${p[1]}</p>
+<div class="actions">
+<a class="btn" href="${link}">Chat</a>
+<a class="btn" href="${link}">Call</a>
+<a class="btn" href="${link}">Video</a>
+</div>
+</div>
+</div>`).join("");
+</script>
+</body>
+</html>
